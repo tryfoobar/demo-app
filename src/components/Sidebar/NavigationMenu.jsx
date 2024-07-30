@@ -11,7 +11,7 @@ const NavigationMenu = () => {
   };
   return (
     <div>
-      <div className="flex justify-between items-center px-5 mb-3">
+      <div className="flex justify-between items-center px-[22px] mb-3">
         <div className="text-[14px] text-[#778CA2] leading-[21px] font-light">
           Navigation
         </div>
