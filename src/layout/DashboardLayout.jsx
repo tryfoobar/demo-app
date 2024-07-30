@@ -12,6 +12,7 @@ import MenuIcon from "../assets/icons/menu.svg";
 import Logo from "../assets/logos/magicTodo.svg";
 import NavigationMenu from "../components/Sidebar/NavigationMenu";
 import ProjectsMenu from "../components/Sidebar/ProjectsMenu";
+import MenuLink from "../components/Sidebar/MenuLink";
 
 const drawerWidth = 252;
 
@@ -72,6 +73,7 @@ export default function DashboardLayout() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
 
+      {/* Nav Bar For Dashboard  */}
       <AppBar
         sx={{
           bgcolor: "transparent",
@@ -104,6 +106,7 @@ export default function DashboardLayout() {
         </Toolbar>
       </AppBar>
 
+      {/* Side Bar for Dashboard */}
       <Drawer
         sx={{
           width: drawerWidth,
@@ -128,9 +131,15 @@ export default function DashboardLayout() {
           <NavigationMenu />
           {/* Projects Menu  */}
           <ProjectsMenu />
+          {/* User Quick Buttons  */}
+          <div className="mt-20 mb-5">
+            <MenuLink link="Help Center" />
+            <MenuLink link="Settings" />
+          </div>
         </div>
       </Drawer>
 
+      {/* Main Dashboard Section  */}
       <Main open={open}></Main>
     </Box>
   );
