@@ -11,6 +11,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "../assets/icons/menu.svg";
 import Logo from "../assets/logos/magicTodo.svg";
 import NavigationMenu from "../components/Sidebar/NavigationMenu";
+import ProjectsMenu from "../components/Sidebar/ProjectsMenu";
 
 const drawerWidth = 252;
 
@@ -125,6 +126,8 @@ export default function DashboardLayout() {
         <div className="mt-6">
           {/* Navigation Menu  */}
           <NavigationMenu />
+          {/* Projects Menu  */}
+          <ProjectsMenu />
         </div>
       </Drawer>
 
