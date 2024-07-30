@@ -126,13 +126,14 @@ export default function DashboardLayout() {
           <img src={Logo} alt="" />
         </DrawerHeader>
 
+        {/* MENU LINKS   */}
         <div className="mt-6">
           {/* Navigation Menu  */}
           <NavigationMenu />
           {/* Projects Menu  */}
           <ProjectsMenu />
           {/* User Quick Buttons  */}
-          <div className="mt-20 mb-5">
+          <div className="mt-20 mb-5 flex flex-col items-center justify-center">
             <MenuLink link="Help Center" />
             <MenuLink link="Settings" />
           </div>
