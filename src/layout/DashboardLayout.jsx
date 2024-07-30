@@ -13,6 +13,7 @@ import Logo from "../assets/logos/magicTodo.svg";
 import NavigationMenu from "../components/Sidebar/NavigationMenu";
 import ProjectsMenu from "../components/Sidebar/ProjectsMenu";
 import MenuLink from "../components/Sidebar/MenuLink";
+import Navbar from "../components/Navbar";
 
 const drawerWidth = 252;
 
@@ -83,27 +84,31 @@ export default function DashboardLayout() {
         position="fixed"
         open={open}
       >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, borderRadius: "9999px" }}
-          >
-            <img className="w-[20px]" src={MenuIcon} alt="" />
-          </IconButton>
+        <div className="flex items-center justify-between">
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{ mr: 2, borderRadius: "9999px" }}
+            >
+              <img className="w-[20px]" src={MenuIcon} alt="" />
+            </IconButton>
 
-          <Typography
-            sx={{ fontWeight: 600 }}
-            fontFamily={"Public Sans"}
-            variant="h6"
-            noWrap
-            component="div"
-          >
-            Dashboard
-          </Typography>
-        </Toolbar>
+            <Typography
+              sx={{ fontWeight: 600 }}
+              fontFamily={"Public Sans"}
+              variant="h6"
+              noWrap
+              component="div"
+            >
+              Dashboard
+            </Typography>
+          </Toolbar>
+
+          <Navbar />
+        </div>
       </AppBar>
 
       {/* Side Bar for Dashboard */}
