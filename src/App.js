@@ -1,9 +1,12 @@
 import DashboardLayout from "./layout/DashboardLayout";
+import Dashboard from "./pages/dashboard";
 
 function App() {
   return (
     <div className="">
-      <DashboardLayout />
+      <DashboardLayout>
+        <Dashboard />
+      </DashboardLayout>
     </div>
   );
 }
