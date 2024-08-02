@@ -6,6 +6,7 @@ import TodoListItem from "../components/Dashboard/TodoListItem";
 import Calendar from "../components/Dashboard/Calendar";
 import OverView from "../components/Dashboard/OverView";
 import PendingProjects from "../components/Dashboard/PendingProjects";
+import { Link } from "react-router-dom";
 
 const todos = [
   { title: "Create non-annoying nudges", type: "Work", checked: true },
@@ -99,11 +100,15 @@ const Dashboard = () => {
             </Stack>
           </Stack>
 
-          <div className="flex cursor-pointer hover:underline items-center  font-semibold gap-2 text-[#4D7CFE] text-[14px] leading-[18px] pl-[30px]">
+          <Link
+            to="/tasks"
+            className="flex cursor-pointer hover:underline items-center  font-semibold gap-2 text-[#4D7CFE] text-[14px] leading-[18px] pl-[30px]"
+          >
             See all tasks
             <img src={arrow} alt="" />
-          </div>
+          </Link>
         </div>
+
         <Paper
           sx={{
             boxShadow: "none",
@@ -131,6 +136,7 @@ const Dashboard = () => {
 
           {todos.map((todo, idx) => (
             <TodoListItem
+              key={idx}
               title={todo.title}
               type={todo.type}
               checked={todo?.checked}
