@@ -97,7 +97,7 @@ export default function DashboardLayout({ children }) {
             </IconButton>
 
             <Typography
-              sx={{ fontWeight: 600 }}
+              sx={{ fontWeight: 600, color: "#252631", fontSize: "22px" }}
               fontFamily={"Public Sans"}
               variant="h6"
               noWrap
