@@ -62,7 +62,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   borderBottom: "1px solid #E8ECEF",
 }));
 
-export default function DashboardLayout() {
+export default function DashboardLayout({ children }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
 
@@ -146,7 +146,11 @@ export default function DashboardLayout() {
       </Drawer>
 
       {/* Main Dashboard Section  */}
-      <Main open={open}></Main>
+      <Main open={open}>
+        <DrawerHeader sx={{ border: "none" }} />
+
+        {children}
+      </Main>
     </Box>
   );
 }
