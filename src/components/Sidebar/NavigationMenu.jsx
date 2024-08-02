@@ -37,7 +37,7 @@ const NavigationMenu = () => {
           open ? "max-h-[1000px]" : "max-h-0"
         }`}
       >
-        <MenuLink active link={"Dashboard"} />
+        <MenuLink active link={"Dashboard"} href="dashboard" />
         <MenuLink link={"Projects"} />
         <MenuLink link={"Tasks"} />
         <MenuLink link={"Calendar"} />
