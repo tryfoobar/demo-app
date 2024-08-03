@@ -8,6 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 // pages
 import Dashboard from "./pages/dashboard";
 import Tasks from "./pages/tasks";
+import Analytics from "./pages/analytics";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "tasks",
         element: <Tasks />,
+      },
+      {
+        path: "analytics",
+        element: <Analytics />,
       },
     ],
   },
