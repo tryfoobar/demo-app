@@ -41,7 +41,7 @@ const NavigationMenu = () => {
         <MenuLink link={"Projects"} />
         <MenuLink link={"Tasks"} href="tasks" />
         <MenuLink link={"Calendar"} />
-        <MenuLink link={"Analytics"} />
+        <MenuLink link={"Analytics"} href="analytics" />
       </div>
     </div>
   );
