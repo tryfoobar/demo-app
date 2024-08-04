@@ -14,6 +14,7 @@ import NavigationMenu from "../components/Sidebar/NavigationMenu";
 import ProjectsMenu from "../components/Sidebar/ProjectsMenu";
 import MenuLink from "../components/Sidebar/MenuLink";
 import Navbar from "../components/Navbar";
+import Settings from "../components/Settings/Settings";
 
 const drawerWidth = 252;
 
@@ -66,6 +67,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 export default function DashboardLayout({ children }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
+  const [openPopup, setOpenPopup] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(!open);
@@ -141,7 +143,10 @@ export default function DashboardLayout({ children }) {
           {/* User Quick Buttons  */}
           <div className="mt-20 mb-5 flex flex-col items-center justify-center">
             <MenuLink link="Help Center" />
-            <MenuLink link="Settings" />
+
+            <div onClick={() => setOpenPopup(!openPopup)}>
+              <MenuLink link="Settings" />
+            </div>
           </div>
         </div>
       </Drawer>
@@ -151,6 +156,9 @@ export default function DashboardLayout({ children }) {
         <DrawerHeader sx={{ border: "none" }} />
 
         {children}
+
+        {/* Settings PopUp  */}
+        <Settings open={openPopup} setOpen={setOpenPopup} />
       </Main>
     </Box>
   );
