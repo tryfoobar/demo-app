@@ -37,7 +37,11 @@ const Progress = ({ title, graph, analytics = false }) => {
         </div>
       )}
       <div className="px-4 absolute bottom-5">
-        <img className="object-contain object-center" src={graph} alt="" />
+        <img
+          className="object-contain object-center max-h-[]"
+          src={graph}
+          alt=""
+        />
       </div>
     </Paper>
   );
