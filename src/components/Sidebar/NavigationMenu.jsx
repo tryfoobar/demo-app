@@ -38,7 +38,7 @@ const NavigationMenu = () => {
         }`}
       >
         <MenuLink link={"Dashboard"} href="dashboard" />
-        <MenuLink link={"Projects"} />
+        <MenuLink link={"Projects"} href="projects" />
         <MenuLink link={"Tasks"} href="tasks" />
         <MenuLink link={"Calendar"} />
         <MenuLink link={"Analytics"} href="analytics" />
