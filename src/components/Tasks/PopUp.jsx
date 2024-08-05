@@ -27,7 +27,7 @@ const ActionBtn = ({ img, title }) => {
   );
 };
 
-const PopUp = ({ open, setOpen }) => {
+const PopUp = ({ open, setOpen, todo }) => {
   return (
     <Modal open={open} popUpTitle="Task overview" setOpen={setOpen} width={654}>
       <div slot="tab" className="flex  items-center justify-between w-full">
@@ -46,7 +46,7 @@ const PopUp = ({ open, setOpen }) => {
           <div className="flex items-center gap-3">
             <img src={mark} alt="" />
             <div className="text-[20px] font-semibold leading-[30px] text-[#252631]">
-              PGN meeting at Tern Haven
+              {todo?.title}
             </div>
           </div>
 
@@ -90,7 +90,7 @@ const PopUp = ({ open, setOpen }) => {
             </p>
 
             <div className="mt-3 w-fit pl-[24px]">
-              <Chip type="Work" />
+              <Chip type={todo?.type} />
             </div>
           </div>
 
