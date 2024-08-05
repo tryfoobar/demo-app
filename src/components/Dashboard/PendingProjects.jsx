@@ -3,6 +3,7 @@ import Task from "../../assets/icons/task.svg";
 import Chat from "../../assets/icons/chat.svg";
 import birthday from "../../assets/logos/birthday-party.webp";
 import arrow from "../../assets/icons/blue-right-arrow.svg";
+import { Link } from "react-router-dom";
 
 const PendingProjects = () => {
   return (
@@ -12,10 +13,13 @@ const PendingProjects = () => {
           Pending projects
         </div>
 
-        <div className="flex cursor-pointer hover:underline items-center font-semibold gap-2 text-[#4D7CFE] text-[14px] leading-[18px] pl-[30px]">
+        <Link
+          to="/projects"
+          className="flex cursor-pointer hover:underline items-center font-semibold gap-2 text-[#4D7CFE] text-[14px] leading-[18px] pl-[30px]"
+        >
           See all projects
           <img src={arrow} alt="" />
-        </div>
+        </Link>
       </div>
 
       <Paper
