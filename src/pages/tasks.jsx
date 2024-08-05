@@ -85,11 +85,11 @@ const Tasks = () => {
           </div>
         </div>
 
-        {todos.map((todo) => (
+        {todos.map((todo, idx) => (
           <TodoListItem
             id={todo.id}
             handleClick={handleClick}
-            key={todo.id}
+            key={idx}
             title={todo.title}
             type={todo.type}
             checked={todo?.checked}
