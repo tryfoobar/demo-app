@@ -18,7 +18,7 @@ import { Checkbox } from "@mui/material";
 
 const ActionBtn = ({ img, title }) => {
   return (
-    <div className="flex gap-[11px] items-center h-[42px]">
+    <div className="flex gap-[11px] items-center h-[42px] cursor-pointer w-[219px]">
       <img src={img} alt="" />
       <div className="text-[14px] font-semibold leading-[21px] text-[#252631]">
         {title}
@@ -29,7 +29,7 @@ const ActionBtn = ({ img, title }) => {
 
 const PopUp = ({ open, setOpen }) => {
   return (
-    <Modal open={open} popUpTitle="Task overview" setOpen={setOpen}>
+    <Modal open={open} popUpTitle="Task overview" setOpen={setOpen} width={654}>
       <div slot="tab" className="flex  items-center justify-between w-full">
         <div className="text-[12px] font-normal leading-[18px] text-[#778CA2]">
           Overall progress 6/13 subtasks complete
@@ -176,7 +176,7 @@ const PopUp = ({ open, setOpen }) => {
           </div>
         </div>
 
-        <div className="w-[30%]">
+        <div className="w-[30%] mt-[50px]">
           <div className="text-[12px] font-normal leading-[18px] text-[#778CA2]">
             Actions
           </div>
