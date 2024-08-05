@@ -29,18 +29,23 @@ const Dashboard = () => {
   const handleDelete = () => {
     console.info("You clicked the delete icon.");
   };
+
   return (
     <Grid container spacing={3}>
       <Grid item xs={8}>
+        {/* Stats  */}
         <div className="flex items-center justify-between">
           <div className="text-[16px] font-semibold leading-[24px] text-[#778CA2]">
             Tasks overview
           </div>
 
-          <div className="flex cursor-pointer hover:underline items-center font-semibold gap-2 text-[#4D7CFE] text-[14px] leading-[18px] pl-[30px]">
+          <Link
+            to="/analytics"
+            className="flex cursor-pointer hover:underline items-center font-semibold gap-2 text-[#4D7CFE] text-[14px] leading-[18px] pl-[30px]"
+          >
             See all stats
             <img src={arrow} alt="" />
-          </div>
+          </Link>
         </div>
 
         <Paper
@@ -56,6 +61,7 @@ const Dashboard = () => {
           <OverView />
         </Paper>
 
+        {/* Tasks  */}
         <div className="flex items-center justify-between mt-4">
           <Stack direction="row" alignItems="center" spacing={2}>
             <div className="text-[16px] font-semibold leading-[24px] text-[#778CA2]">
@@ -63,40 +69,28 @@ const Dashboard = () => {
             </div>
 
             <Stack direction="row" alignItems={"center"} spacing={1}>
-              <Chip
-                sx={{
-                  fontFamily: "Public Sans",
-                  color: "#778CA2",
-                  bgcolor: "#F2F4F6",
-                  height: "fit-content",
-                  p: "4px 14px 5px 16px !important",
-                }}
-                onDelete={handleDelete}
-                deleteIcon={<img src={x} />}
-                label="Complete"
-              />
-              <Chip
-                size="small"
-                sx={{
-                  fontFamily: "Public Sans",
-                  color: "#778CA2",
-                  bgcolor: "#F2F4F6",
-                  height: "fit-content",
-                  p: "3px 14px 4px 16px !important",
-                }}
-                label="Pending"
-              />
-              <Chip
-                size="small"
-                variant="outlined"
-                sx={{
-                  fontFamily: "Public Sans",
-                  color: "#778CA2",
-                  height: "fit-content",
-                  p: "3px 14px 4px 16px !important",
-                }}
-                label="Expired"
-              />
+              <div
+                style={{ padding: "3px 14px 4px 16px" }}
+                className="text-[14px] text-[#778CA2] leading-[21px] font-normal flex items-center gap-2 rounded-[99px] bg-[#F2F4F6] cursor-pointer"
+              >
+                Complete
+                <img src={x} alt="" />
+              </div>
+
+              <div
+                style={{ padding: "3px 14px 4px 16px" }}
+                className="text-[14px] text-[#778CA2] leading-[21px] font-normal flex items-center gap-2 rounded-[99px] bg-[#F2F4F6] cursor-pointer"
+              >
+                Pending
+                <img src={x} alt="" />
+              </div>
+
+              <div
+                style={{ padding: "3px 14px 4px 16px" }}
+                className="text-[14px] text-[#778CA2] leading-[21px] font-normal flex items-center gap-2 rounded-[99px] border border-[#E8ECEF] cursor-pointer"
+              >
+                Expired
+              </div>
             </Stack>
           </Stack>
 
@@ -137,6 +131,7 @@ const Dashboard = () => {
           {todos.map((todo, idx) => (
             <TodoListItem
               key={idx}
+              handleClick={() => console.log("")}
               title={todo.title}
               type={todo.type}
               checked={todo?.checked}
@@ -146,6 +141,7 @@ const Dashboard = () => {
       </Grid>
 
       <Grid item xs={4}>
+        {/* Calendar  */}
         <div className="text-[16px] font-semibold leading-[24px] text-[#778CA2] mb-2">
           Calendar
         </div>
@@ -161,6 +157,7 @@ const Dashboard = () => {
           <Calendar />
         </Paper>
 
+        {/* Projects  */}
         <PendingProjects />
       </Grid>
     </Grid>
