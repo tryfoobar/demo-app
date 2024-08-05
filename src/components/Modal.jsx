@@ -13,21 +13,15 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     padding: theme.spacing(0),
   },
   "& .MuiDialogActions-root": {
-    padding: theme.spacing(1),
+    padding: theme.spacing(0),
   },
   "& .MuiDialog-container": {
     background: "rgba(0, 0, 0, 0.7)",
     backdropFilter: "blur(2.7182817459106445px)",
   },
-  "& .MuiDialog-paper": {
-    borderRadius: "8px",
-    maxWidth: 750,
-    width: 750,
-    boxShadow: "0px 5px 25px 0px rgba(91, 91, 91, 0.10)",
-  },
 }));
 
-export default function Modal({ open, setOpen, popUpTitle, children }) {
+export default function Modal({ open, setOpen, popUpTitle, children, width }) {
   const tab = React.Children.toArray(children).find(
     (child) => child.props.slot === "tab"
   );
@@ -47,6 +41,14 @@ export default function Modal({ open, setOpen, popUpTitle, children }) {
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
+        sx={{
+          "& .MuiDialog-paper": {
+            borderRadius: "8px",
+            maxWidth: 750,
+            width: width ? width : 750,
+            boxShadow: "0px 5px 25px 0px rgba(91, 91, 91, 0.10)",
+          },
+        }}
       >
         <DialogTitle
           sx={{
@@ -83,7 +85,7 @@ export default function Modal({ open, setOpen, popUpTitle, children }) {
           <div className="px-6 mt-5">{content}</div>
         </DialogContent>
 
-        <DialogActions sx={{ mt: 3 }}>{actions}</DialogActions>
+        <DialogActions sx={{ mt: 3, p: 0 }}>{actions}</DialogActions>
       </BootstrapDialog>
     </>
   );
