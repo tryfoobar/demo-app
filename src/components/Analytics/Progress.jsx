@@ -38,7 +38,7 @@ const Progress = ({ title, graph, analytics = false }) => {
       )}
       <div className="px-4 absolute bottom-5">
         <img
-          className="object-contain object-center max-h-[]"
+          className="object-contain object-center max-h-[340px] w-full"
           src={graph}
           alt=""
         />
