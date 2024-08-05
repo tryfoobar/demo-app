@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,6 +15,7 @@ import ProjectsMenu from "../components/Sidebar/ProjectsMenu";
 import MenuLink from "../components/Sidebar/MenuLink";
 import Navbar from "../components/Navbar";
 import Settings from "../components/Settings/Settings";
+import { useLocation } from "react-router-dom";
 
 const drawerWidth = 252;
 
@@ -65,7 +66,8 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 export default function DashboardLayout({ children }) {
-  const theme = useTheme();
+  let location = useLocation();
+
   const [open, setOpen] = React.useState(true);
   const [openPopup, setOpenPopup] = React.useState(false);
 
@@ -94,19 +96,24 @@ export default function DashboardLayout({ children }) {
               aria-label="open drawer"
               onClick={handleDrawerOpen}
               edge="start"
-              sx={{ mr: 2, borderRadius: "9999px" }}
+              sx={{ mr: 1, borderRadius: "9999px" }}
             >
-              <img className="w-[20px]" src={MenuIcon} alt="" />
+              <img className="w-[15px]" src={MenuIcon} alt="" />
             </IconButton>
 
             <Typography
-              sx={{ fontWeight: 600, color: "#252631", fontSize: "22px" }}
+              sx={{
+                fontWeight: 600,
+                color: "#252631",
+                fontSize: "22px",
+                textTransform: "capitalize",
+              }}
               fontFamily={"Public Sans"}
               variant="h6"
               noWrap
               component="div"
             >
-              Dashboard
+              {location ? location?.pathname?.slice(1) : "Dashboard"}
             </Typography>
           </Toolbar>
 
