@@ -4,7 +4,7 @@ import { Checkbox } from "@mui/material";
 import Chip from "../Chip";
 import { useState } from "react";
 
-const TodoListItem = ({ title, type, checked = false }) => {
+const TodoListItem = ({ title, type, checked = false, handleClick, id }) => {
   const [checkbox, setCheckbox] = useState(checked);
 
   const handleChange = (event) => {
@@ -12,7 +12,10 @@ const TodoListItem = ({ title, type, checked = false }) => {
   };
 
   return (
-    <div className="h-[52px] mx-2 flex items-center justify-between border-b-[1px] border-[#E8ECEF] cursor-pointer hover:bg-[#E8ECEF]/40">
+    <div
+      onClick={() => handleClick(id)}
+      className="h-[52px] mx-2 flex items-center justify-between border-b-[1px] border-[#E8ECEF] cursor-pointer hover:bg-[#E8ECEF]/40"
+    >
       <div className="flex  items-center">
         <Checkbox
           checked={checkbox}
