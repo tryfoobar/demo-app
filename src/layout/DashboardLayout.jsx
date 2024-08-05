@@ -67,7 +67,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 export default function DashboardLayout({ children }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
-  const [openPopup, setOpenPopup] = React.useState(true);
+  const [openPopup, setOpenPopup] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(!open);
