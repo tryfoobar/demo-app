@@ -9,6 +9,7 @@ import reportWebVitals from "./reportWebVitals";
 import Dashboard from "./pages/dashboard";
 import Tasks from "./pages/tasks";
 import Analytics from "./pages/analytics";
+import Projects from "./pages/projects";
 
 const router = createBrowserRouter([
   {
@@ -16,12 +17,12 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "dashboard",
         element: <Dashboard />,
       },
       {
-        path: "dashboard",
-        element: <Dashboard />,
+        path: "projects",
+        element: <Projects />,
       },
       {
         path: "tasks",
