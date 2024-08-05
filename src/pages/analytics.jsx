@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import React from "react";
+
 import Progress from "../components/Analytics/Progress";
 import graph from "../assets/analytics/people-data.webp";
 import graph2 from "../assets/analytics/task-graph.webp";

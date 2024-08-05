@@ -1,4 +1,5 @@
-import { Checkbox, Chip, Grid, Paper, Stack } from "@mui/material";
+import { Checkbox, Grid, Paper, Stack } from "@mui/material";
+
 import arrow from "../assets/icons/blue-right-arrow.svg";
 import x from "../assets/icons/cancel.svg";
 
@@ -6,6 +7,7 @@ import TodoListItem from "../components/Dashboard/TodoListItem";
 import Calendar from "../components/Dashboard/Calendar";
 import OverView from "../components/Dashboard/OverView";
 import PendingProjects from "../components/Dashboard/PendingProjects";
+
 import { Link } from "react-router-dom";
 
 const todos = [
@@ -26,10 +28,6 @@ const todos = [
 ];
 
 const Dashboard = () => {
-  const handleDelete = () => {
-    console.info("You clicked the delete icon.");
-  };
-
   return (
     <Grid container spacing={3}>
       <Grid item xs={8}>

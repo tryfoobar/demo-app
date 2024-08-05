@@ -1,8 +1,9 @@
+import { useState } from "react";
+import { Checkbox } from "@mui/material";
+
 import Task from "../../assets/icons/task.svg";
 import Chat from "../../assets/icons/chat.svg";
-import { Checkbox } from "@mui/material";
 import Chip from "../Chip";
-import { useState } from "react";
 
 const TodoListItem = ({ title, type, checked = false, handleClick, id }) => {
   const [checkbox, setCheckbox] = useState(checked);

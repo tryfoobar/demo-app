@@ -1,7 +1,8 @@
-import { Paper, Stack, Checkbox } from "@mui/material";
+import { useState } from "react";
+import { Paper, Checkbox } from "@mui/material";
+
 import TodoListItem from "../components/Dashboard/TodoListItem";
 import PopUp from "../components/Tasks/PopUp";
-import { useState } from "react";
 
 const todos = [
   { title: "Create non-annoying nudges", type: "Work", checked: true, id: 1 },
