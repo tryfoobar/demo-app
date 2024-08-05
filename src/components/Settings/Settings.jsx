@@ -45,7 +45,7 @@ const Settings = ({ open, setOpen }) => {
 
       <div
         slot="actions"
-        className="flex justify-between items-center w-full px-3 mb-5 mt-4"
+        className="flex justify-between items-center w-full px-3 mb-5 mt-12"
       >
         <div className="bg-[#F2F4F6] text-[14px] font-semibold leading-[21px] text-[#778CA2] p-[12px_24px] rounded-md  cursor-pointer hover:bg-[#dee1e3]">
           Dismiss All
