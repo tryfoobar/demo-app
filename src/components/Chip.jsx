@@ -1,16 +1,16 @@
 const Chip = ({ type }) => {
   const getStyle = () => {
-    if (type == "Work") {
+    if (type === "Work") {
       return {
         bg: "var(--fe-4-d-97-soft, linear-gradient(0deg, rgba(254, 77, 151, 0.15) 0%, rgba(254, 77, 151, 0.15) 100%), #FFF)",
         color: "#FE4D97",
       };
-    } else if (type == "Family") {
+    } else if (type === "Family") {
       return {
         bg: "var(--6-dd-230-soft, linear-gradient(0deg, rgba(109, 210, 48, 0.15) 0%, rgba(109, 210, 48, 0.15) 100%), #FFF)",
         color: "#6DD230",
       };
-    } else if (type == "Home") {
+    } else if (type === "Home") {
       return {
         bg: "var(--ffab-2-b-soft, linear-gradient(0deg, rgba(255, 171, 43, 0.15) 0%, rgba(255, 171, 43, 0.15) 100%), #FFF)",
         color: "#FFAB2B",
