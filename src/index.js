@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { init } from "commandbar";
 
 // pages
 import Dashboard from "./pages/dashboard";
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
   },
 ]);
 
+init("1ebd9851");
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

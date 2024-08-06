@@ -8,6 +8,13 @@ function App() {
   const match = useMatch("/");
   const navigate = useNavigate();
 
+  window.CommandBar.boot("123456");
+
+  React.useEffect(() => {
+    const routerFunc = (newUrl) => navigate(newUrl);
+    window.CommandBar.addRouter(routerFunc);
+  }, []);
+
   useEffect(() => {
     if (match?.pathname === "/") {
       navigate("/dashboard");
