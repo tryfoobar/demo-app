@@ -13,7 +13,7 @@ function App() {
   React.useEffect(() => {
     const routerFunc = (newUrl) => navigate(newUrl);
     window.CommandBar.addRouter(routerFunc);
-  }, []);
+  }, [navigate]);
 
   useEffect(() => {
     if (match?.pathname === "/") {
